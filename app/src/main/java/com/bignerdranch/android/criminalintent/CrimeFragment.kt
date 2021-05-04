@@ -56,7 +56,7 @@ class CrimeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         crimeDetailViewModel.crimeLiveData.observe(
             viewLifecycleOwner,
-            androidx.lifecycle.Observer { crime ->
+            { crime ->
                 crime?.let {
                     this.crime = crime
                     updateUI()
@@ -84,6 +84,11 @@ class CrimeFragment : Fragment() {
         solvedCheckBox.apply {
             setOnCheckedChangeListener { _, isChecked -> crime.isSolved = isChecked }
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        crimeDetailViewModel.saveCrime(crime)
     }
 
     private fun updateUI() {
