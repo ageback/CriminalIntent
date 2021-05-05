@@ -12,5 +12,6 @@ data class Crime(
 //    var date: CharSequence = DateFormat.format("yyyy-MM-dd E HH:mm:ss", Date()),
     var date: Date = Date(),
     var isSolved: Boolean = false,
+    var suspect: String = ""
 //    var requirePolice: Boolean = false
 )

@@ -6,4 +6,14 @@
     <string name="crime_details_label">细节</string>
     <string name="crime_solved_label">已解决</string>
     <string name="new_crime">新的陋习</string>
+    <string name="crime_suspect_text">选择可疑分子</string>
+    <string name="crime_report_text">发送陋习报告</string>
+    <string name="crime_report">%1$s！
+        在 %2$s,%3$s 和 %4$s 发现陋习</string>
+    <string name="crime_report_solved">案子解决了</string>
+    <string name="crime_report_unsolved">案子没有解决</string>
+    <string name="crime_report_no_suspect">没有可疑分子</string>
+    <string name="crime_report_suspect">可疑分子是 %s。</string>
+    <string name="crime_report_subject">CriminalIntent 陋习报告</string>
+    <string name="send_report">发送陋习报告通过</string>
 </resources>
