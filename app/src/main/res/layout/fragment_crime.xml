@@ -25,6 +25,10 @@
         android:layout_height="wrap_content"
         tools:text="星期日 5月2日 17:20 北京+8 2021" />
 
+    <Button
+        android:id="@+id/crime_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <CheckBox
         android:id="@+id/crime_solved"
         android:layout_width="match_parent"
