@@ -26,10 +26,12 @@ private const val TAG = "CrimeFragment"
 private const val ARG_CRIME_ID = "crime_id"
 private const val DIALOG_DATE = "DialogDate"
 private const val DIALOG_TIME = "DialogTime"
+private const val DIALOG_PHOTO = "DialogPhoto"
 private const val REQUEST_DATE = 0
 private const val REQUEST_TIME = 1
 private const val REQUEST_CONTACT = 2
 private const val REQUEST_PHOTO = 3
+private const val REQUEST_PHOTO_DIALOG = 4
 private const val DATE_FORMAT = "EEE, MMM, dd"
 
 class CrimeFragment : Fragment(), DatePickerFragment.Callbacks, TimePickerFragment.Callbacks {
@@ -177,6 +179,24 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks, TimePickerFragme
 
                 startActivityForResult(captureImage, REQUEST_PHOTO)
             }
+        }
+
+        photoView.apply {
+            setOnClickListener {
+                if (photoFile.exists()) {
+                    PhotoViewFragment.newIntent(photoFile.path).apply {
+                        setTargetFragment(this@CrimeFragment, REQUEST_PHOTO_DIALOG)
+                        show(this@CrimeFragment.parentFragmentManager, DIALOG_PHOTO)
+
+                        //将DialogFragment显示为全屏界面
+//                this@CrimeFragment.parentFragmentManager.beginTransaction()
+//                    .add(android.R.id.content, this)
+//                    .addToBackStack(null)
+//                    .commit()
+                    }
+                }
+            }
+
         }
     }
 
